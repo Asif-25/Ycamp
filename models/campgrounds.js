@@ -3,16 +3,23 @@ const { campgroundSchema } = require('../schema');
 const Review = require('./review');
 const { object } = require('joi');
 const { type } = require('os');
+const { runInThisContext } = require('vm');
 const Schema = mongoose.Schema;
+
+const ImageSchema = new Schema({
+    url: {type: String},
+    filename: {type: String}
+});
+
+ImageSchema.virtual('thumbnail').get( function(){
+    return this.url.replace('/upload','/upload/w_300,c_scale');
+});
 
 const CampgroundSchema = new Schema({
     title: {
         type: String
     },
-    images: [{
-        url: {type: String},
-        filename: {type: String}
-    }],
+    images: [ImageSchema],
     price: {
         type: Number
     },
