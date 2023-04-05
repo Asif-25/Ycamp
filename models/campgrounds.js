@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { campgroundSchema } = require('../schema');
 const Review = require('./review');
-const { object } = require('joi');
+const { object, string } = require('joi');
 const { type } = require('os');
 const { runInThisContext } = require('vm');
 const Schema = mongoose.Schema;
@@ -20,6 +20,17 @@ const CampgroundSchema = new Schema({
         type: String
     },
     images: [ImageSchema],
+    geometry: {
+        type: {
+            type: String,
+            enum: ['Point'],
+            require: true
+        },
+        coordinates: {
+            type: [Number],
+            require: true
+        }
+    },
     price: {
         type: Number
     },
