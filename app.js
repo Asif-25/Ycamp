@@ -52,9 +52,12 @@ const sessionConfig = {
     resave: false,
     saveUninitialized: false,
     cookie: {
+        // secure:true,
         httpOnly:true,
         expires: Date.now() + 1000*60*60*24*7,
         maxAge: 1000*60*60*24*7,
+        sameSite: "none"
+        
     }
     
 }
@@ -63,8 +66,8 @@ app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(new localStrategy(User.authenticate()));
 
+passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
