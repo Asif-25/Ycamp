@@ -7,7 +7,7 @@ const map = new mapboxgl.Map({
     zoom: 4
 });
 
-map.addControl(new mapboxgl.NavigationControl());
+map.addControl(new mapboxgl.NavigationControl(), 'top-left');
 
 
 map.on('load', function () {
