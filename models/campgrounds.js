@@ -1,9 +1,5 @@
 const mongoose = require('mongoose');
-const { campgroundSchema } = require('../schema');
 const Review = require('./review');
-const { object, string } = require('joi');
-const { type } = require('os');
-const { runInThisContext } = require('vm');
 const Schema = mongoose.Schema;
 
 const ImageSchema = new Schema({
@@ -14,6 +10,8 @@ const ImageSchema = new Schema({
 ImageSchema.virtual('thumbnail').get( function(){
     return this.url.replace('/upload','/upload/w_300,c_scale');
 });
+
+const opts = { toJSON: { virtuals: true } };
 
 const CampgroundSchema = new Schema({
     title: {
@@ -50,6 +48,13 @@ const CampgroundSchema = new Schema({
             ref: 'Review'
         }
     ]
+}, opts);
+
+//cluster-map popup
+CampgroundSchema.virtual('properties.popUpMarkup').get(function () {
+    return `
+    <strong><a href="/campgrounds/${this._id}">${this.title}</a><strong>
+    <p>${this.description.substring(0, 20)}...</p>`
 });
 
 // Middleware  deleting reviews along with camp deletion
