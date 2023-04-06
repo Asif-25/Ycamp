@@ -20,16 +20,19 @@ db.once("open",()=>{
 const sample = array => array[Math.floor(Math.random()*array.length)] 
 const seedDB = async () => {
     await Campground.deleteMany({});
-    for(let i=0; i<50; i++){
+    for(let i=0; i<200; i++){
         const random1000 = Math.floor(Math.random()*1000)
         const price = (Math.random()*(70-30) + 30).toFixed(2)
         const camp = new Campground({
-            author:'64272a5d2c693dc3ae6e07f5',
+            author:'642da96ee97f63c9f3cb4d82',
             title : `${sample(descriptors)} ${sample(places)}`,
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             geometry: {
                 type: "Point",
-                coordinates: [73.401673 , 18.754856]
+                coordinates: [
+                    cities[random1000].longitude,
+                    cities[random1000].latitude
+                ]
             },
             // image: `https://source.unsplash.com/random/500x400`,
             images: [
