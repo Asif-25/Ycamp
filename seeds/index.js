@@ -39,8 +39,8 @@ const seedDB = async () => {
             // image: `https://source.unsplash.com/random/500x400`,
             images: [
                 {
-                  url: 'https://res.cloudinary.com/dzg1kwec3/image/upload/v1680630420/YCAMP/v3kfa9seb3aqtg2hzxhf.jpg',
-                  filename: 'YCAMP/v3kfa9seb3aqtg2hzxhf',        
+                  url: 'https://res.cloudinary.com/dzg1kwec3/image/upload/v1680790009/YCAMP/fhikhhprdqrphd04uwsr.jpg',
+                  filename: 'YCAMP/fhikhhprdqrphd04uwsr.jpg',        
                 }
               ],
         })
