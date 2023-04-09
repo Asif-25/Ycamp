@@ -27,6 +27,8 @@ const seedDB = async () => {
             author:'642da96ee97f63c9f3cb4d82',
             title : `${sample(descriptors)} ${sample(places)}`,
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
+            description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit soluta quo qui, dolorem sint ratione dolor consequatur distinctio quibusdam aspernatur rerum repellendus? Voluptatibus enim dolores cumque ea tempora nesciunt laudantium.`,
+            price: price,
             geometry: {
                 type: "Point",
                 coordinates: [
@@ -41,13 +43,11 @@ const seedDB = async () => {
                   filename: 'YCAMP/v3kfa9seb3aqtg2hzxhf',        
                 }
               ],
-            description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit soluta quo qui, dolorem sint ratione dolor consequatur distinctio quibusdam aspernatur rerum repellendus? Voluptatibus enim dolores cumque ea tempora nesciunt laudantium.`,
-            price: price
         })
         await camp.save();
     }
 }
 // promise to close
 seedDB().then(() => {
-    mongoose.connection.close()
-});
+    mongoose.connection.close();
+})
