@@ -53,8 +53,8 @@ const CampgroundSchema = new Schema({
 //cluster-map popup
 CampgroundSchema.virtual('properties.popUpMarkup').get(function () {
     return `
-    <strong><a href="/campgrounds/${this._id}">${this.title}</a><strong>
-    <p>${this.description.substring(0, 20)}...</p>`
+    <h5><a href="/campgrounds/${this._id}">${this.title}</a></h5>
+    <h6>${this.location}</h6>`
 });
 
 // Middleware  deleting reviews along with camp deletion

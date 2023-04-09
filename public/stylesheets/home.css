@@ -1,6 +1,6 @@
 body {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
     url("https://res.cloudinary.com/dzg1kwec3/image/upload/v1680596967/samples/landscapes/nature-mountains.jpg");
     background-size: cover;
     background-position: center;
