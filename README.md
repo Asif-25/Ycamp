@@ -1,2 +1,2 @@
-# Ycamp
-A full Stack app with CRUD functionalities that provides camping locations with map
+# CampRave
+A Full Stack, user-friendly Web Application CRUD functionalities dedicated to camping enthusiasts, enabling users to review and access crowd-sourced ratings for camping destinations worldwide that provides camping locations with interactive map.
