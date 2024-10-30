@@ -3,7 +3,7 @@
 CampRave is a web platform that allows users to review and view crowd-sourced ratings for camping locations. It provides a user-friendly interface for campers to share their experiences and rate various camping sites. The platform also integrates with Mapbox API to display camping locations on an interactive map.
 ## Live Demo
 
-Check out CampRave : [https://fantastic-handkerchief-worm.cyclic.app/](https://fantastic-handkerchief-worm.cyclic.app/)
+Check out CampRave : [camp-rave-live](https://camp-rave.onrender.com/)
 
 
 
